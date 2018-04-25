@@ -3,8 +3,8 @@ class Snapcraft < Formula
 
   desc "Package any app for every Linux desktop, server, cloud or device. This is a development tap."
   homepage "https://snapcraft.io/"
-  url "https://transfer.sh/12Hpad/snapcraft-2.41.tar.gz"
-  sha256 "1b70a93826094646865de341aa60cd4f738913d97af3ebd217d4be7e2d3a99d4"
+  url "https://transfer.sh/BT7M6/snapcraft-2.41-fixes1.tar.gz"
+  sha256 "39d5ed4d7ec74086ddce982a8497a0edd0ac8090b2d8f7ae3fe7a8c37fe425e2"
 
   bottle do
     cellar :any
