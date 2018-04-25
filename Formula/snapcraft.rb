@@ -19,6 +19,11 @@ class Snapcraft < Formula
   depends_on "squashfs"
   depends_on "python"
 
+  resource "raven" do
+    url "https://files.pythonhosted.org/packages/d7/54/7d199f893a0ac01f8df9b7ec39c0f3ac19146e78b33401b1f4984c9d3583/raven-6.7.0.tar.gz"
+    sha256 "f908e9b39f02580e7f822030d119ed3b2e8d32300a2fec6373e5827d588bbae7"
+  end
+
   resource "pyelftools" do
     url "https://files.pythonhosted.org/packages/ba/78/d4a186a2e38731286c99dc3e3ca8123b6f55cf2e28608e8daf2d84b65494/pyelftools-0.24.tar.gz"
     sha256 "e9dd97d685a5b96b88a988dabadb88e5a539b64cd7d7927fac9a7368dc4c459c"
