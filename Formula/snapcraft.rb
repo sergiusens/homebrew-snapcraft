@@ -1,38 +1,16 @@
 class Snapcraft < Formula
   include Language::Python::Virtualenv
 
-  desc "Package any app for every Linux desktop, server, cloud or device. This is a development tap."
+  desc "Package any app for every Linux desktop, server, cloud or device"
   homepage "https://snapcraft.io/"
-  url "https://transfer.sh/WYaB3/snapcraft-2.42.tar.gz"
-  sha256 "6c0dce4866a8b55c471289851d60452db9f84eee26e5fc1eca27b2c6ca287f3f"
-
-  bottle do
-    cellar :any
-    sha256 "da2562ec3d08deb72de5b7e1702a56a78bc087526dabc1c84096156663e030de" => :high_sierra
-    sha256 "4aa847498eb113cf31baa48e63cbfc4ca6bda912386c947089213665416ba705" => :sierra
-    sha256 "a6e57f573dbcae92a946cdb0fa4d490b62454d41af519b650e0d4412956838b1" => :el_capitan
-  end
+  url "https://files.pythonhosted.org/packages/05/08/1299477f361c8c9263c43f0dbc73460eef7acdc6698665aef47ff96300a2/snapcraft-2.43.tar.gz"
+  sha256 "ebd5d791f8bfccaadbdf91d7961c2fcab1a526d5db37b85916b2f0b0311798e8"
 
   depends_on "libsodium"
   depends_on "libyaml"
   depends_on "lxc"
   depends_on "squashfs"
   depends_on "python"
-
-  resource "raven" do
-    url "https://files.pythonhosted.org/packages/d7/54/7d199f893a0ac01f8df9b7ec39c0f3ac19146e78b33401b1f4984c9d3583/raven-6.7.0.tar.gz"
-    sha256 "f908e9b39f02580e7f822030d119ed3b2e8d32300a2fec6373e5827d588bbae7"
-  end
-
-  resource "pyelftools" do
-    url "https://files.pythonhosted.org/packages/ba/78/d4a186a2e38731286c99dc3e3ca8123b6f55cf2e28608e8daf2d84b65494/pyelftools-0.24.tar.gz"
-    sha256 "e9dd97d685a5b96b88a988dabadb88e5a539b64cd7d7927fac9a7368dc4c459c"
-  end
-
-  resource "pysha3" do
-    url "https://files.pythonhosted.org/packages/73/bf/978d424ac6c9076d73b8fdc8ab8ad46f98af0c34669d736b1d83c758afee/pysha3-1.0.2.tar.gz"
-    sha256 "fe988e73f2ce6d947220624f04d467faf05f1bbdbc64b0a201296bb3af92739e"
-  end
 
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/15/d4/2f888fc463d516ff7bf2379a4e9a552fef7f22a94147655d9b1097108248/certifi-2018.1.18.tar.gz"
@@ -94,6 +72,11 @@ class Snapcraft < Formula
     sha256 "99a8ca03e29851d96616ad0404b4aad7d9ee16f25c9f9708a11faf2810f7b226"
   end
 
+  resource "pyelftools" do
+    url "https://files.pythonhosted.org/packages/ba/78/d4a186a2e38731286c99dc3e3ca8123b6f55cf2e28608e8daf2d84b65494/pyelftools-0.24.tar.gz"
+    sha256 "e9dd97d685a5b96b88a988dabadb88e5a539b64cd7d7927fac9a7368dc4c459c"
+  end
+
   resource "pymacaroons" do
     url "https://files.pythonhosted.org/packages/38/a8/f98dfe2aca2301e8b8899166554bde1437c7110579c372581e1225ab0c81/pymacaroons-0.12.0.tar.gz"
     sha256 "e5fd325cfa845c88f3cb8b5c07a5363e7032fa5cbdb7b48ae0b50445c32167bf"
@@ -102,6 +85,11 @@ class Snapcraft < Formula
   resource "PyNaCl" do
     url "https://files.pythonhosted.org/packages/08/19/cf56e60efd122fa6d2228118a9b345455b13ffe16a14be81d025b03b261f/PyNaCl-1.2.1.tar.gz"
     sha256 "e0d38fa0a75f65f556fb912f2c6790d1fa29b7dd27a1d9cc5591b281321eaaa9"
+  end
+
+  resource "pysha3" do
+    url "https://files.pythonhosted.org/packages/73/bf/978d424ac6c9076d73b8fdc8ab8ad46f98af0c34669d736b1d83c758afee/pysha3-1.0.2.tar.gz"
+    sha256 "fe988e73f2ce6d947220624f04d467faf05f1bbdbc64b0a201296bb3af92739e"
   end
 
   resource "python-debian" do
@@ -120,8 +108,13 @@ class Snapcraft < Formula
   end
 
   resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/4a/85/db5a2df477072b2902b0eb892feb37d88ac635d36245a72a6a69b23b383a/PyYAML-3.12.tar.gz"
-    sha256 "592766c6303207a20efc445587778322d7f73b161bd994f227adaa341ba212ab"
+    url "https://files.pythonhosted.org/packages/9e/a3/1d13970c3f36777c583f136c136f804d70f500168edc1edea6daa7200769/PyYAML-3.13.tar.gz"
+    sha256 "3ef3092145e9b70e3ddd2c7ad59bdd0252a94dfe3949721633e41344de00a6bf"
+  end
+
+  resource "raven" do
+    url "https://files.pythonhosted.org/packages/d7/54/7d199f893a0ac01f8df9b7ec39c0f3ac19146e78b33401b1f4984c9d3583/raven-6.7.0.tar.gz"
+    sha256 "f908e9b39f02580e7f822030d119ed3b2e8d32300a2fec6373e5827d588bbae7"
   end
 
   resource "requests" do
@@ -165,7 +158,6 @@ class Snapcraft < Formula
   end
 
   def install
-    virtualenv_create(libexec, "python3")
     virtualenv_install_with_resources
   end
 
