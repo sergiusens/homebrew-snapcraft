@@ -3,8 +3,8 @@ class Snapcraft < Formula
 
   desc "Package any app for every Linux desktop, server, cloud or device"
   homepage "https://snapcraft.io/"
-  url "https://files.pythonhosted.org/packages/05/08/1299477f361c8c9263c43f0dbc73460eef7acdc6698665aef47ff96300a2/snapcraft-2.43.tar.gz"
-  sha256 "ebd5d791f8bfccaadbdf91d7961c2fcab1a526d5db37b85916b2f0b0311798e8"
+  url "https://files.pythonhosted.org/packages/eb/46/c2cc809e56786719169240e7517e4775f4ddae4d40cacaddc2797aa1788d/snapcraft-2.43.1.tar.gz"
+  sha256 "5a4e12a0e775cf2e7255abe24f5c9104cd57ac75a0a187388827f9ace4589698"
 
   depends_on "libsodium"
   depends_on "libyaml"
