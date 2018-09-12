@@ -5,6 +5,7 @@ class Snapcraft < Formula
   homepage "https://snapcraft.io/"
   url "https://files.pythonhosted.org/packages/eb/46/c2cc809e56786719169240e7517e4775f4ddae4d40cacaddc2797aa1788d/snapcraft-2.43.1.tar.gz"
   sha256 "5a4e12a0e775cf2e7255abe24f5c9104cd57ac75a0a187388827f9ace4589698"
+  head "https://github.com/snapcore/snapcraft.git"
 
   depends_on "libsodium"
   depends_on "libyaml"
