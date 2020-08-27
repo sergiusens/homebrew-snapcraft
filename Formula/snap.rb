@@ -3,9 +3,9 @@ class Snap < Formula
   homepage "https://snapcraft.io/"
 
   stable do
-    version "2.36"
+    version "2.46"
     url "https://github.com/snapcore/snapd/releases/download/#{version}/snapd_#{version}.vendor.tar.xz"
-    sha256 "65a54a4e21419394859063e926a012f07c04a9bfb1146a28a3f48c9221331d86"
+    sha256 "c4f532018ca9d2a5f87a95909b3674f8e299e97ba5cb5575895bcdd29be23db3"
   end
 
   head do
