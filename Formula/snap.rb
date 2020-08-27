@@ -1,6 +1,7 @@
 class Snap < Formula
-  desc "Tool to interact with snaps"
+  desc "The snap tool enable systems to work with .snap files"
   homepage "https://snapcraft.io/"
+  license "GPL-3.0-only"
 
   stable do
     version "2.46"
@@ -16,28 +17,29 @@ class Snap < Formula
   depends_on "squashfs"
 
   def install
-    ENV["GOPATH"] = "#{buildpath}"
+    ENV["GOPATH"] = buildpath
     ENV["GOCACHE"] = "#{HOMEBREW_CACHE}/go_cache"
     (buildpath/"src/github.com/snapcore/snapd").install buildpath.children
 
     cd "src/github.com/snapcore/snapd" do
-      system "go", "get", "golang.org/x/sys/unix"
-
       if version.head?
         system "./get-deps.sh"
         system "./mkversion.sh"
-      elsif revision > 0
+      elsif revision.positive?
         system "./mkversion.sh", "#{version}-#{revision}"
       else
-        system "./mkversion.sh", "#{version}"
+        system "./mkversion.sh", version
       end
 
       system "go", "build", "-o", bin/"snap", "./cmd/snap"
 
-      # Build bash completion
-      bash_completion.install "data/completion/snap"
+      # Build bash completion.
+      bash_completion.install "data/completion/bash/snap"
 
-      # Build manpage
+      # Build zsh completion.
+      zsh_completion.install "data/completion/zsh/_snap"
+
+      # Build manpage.
       system "sh", "-c", "#{bin}/snap help --man > snap.8"
       man8.install "snap.8"
 
@@ -46,6 +48,9 @@ class Snap < Formula
   end
 
   test do
+    (testpath/"pkg/meta").mkpath
+    (testpath/"pkg/meta/snap.yaml").write "name: test-snap\nversion: 1.0.0\nsummary: s\ndescription: d"
+    system "#{bin}/snap", "pack", "pkg"
     system "#{bin}/snap", "version"
   end
 end
